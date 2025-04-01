@@ -9,22 +9,18 @@ function Slide() {
   const slideContentRef = useRef(null);
 
   useEffect(() => {
-    // Ensure refs are current before creating ScrollTrigger
-    if (leftSecRef.current && rePinRef.current) {
-      const tl2 = gsap.timeline();
+    if (leftSecRef.current && rePinRef.current && slideContentRef.current) {
+      gsap.registerPlugin(ScrollTrigger);
       
-      tl2.to(leftSecRef.current, {
-        scrollTrigger: {
-          trigger: slideContentRef.current,
-          start: "top top", // Pin starts when the top of the trigger hits the top of the viewport
-          end: "bottom center", // Pin ends when the bottom of the trigger hits the bottom of the viewport
-          pin: leftSecRef.current, // Use 'true' instead of a selector
-          pinSpacing: false, // Prevents adding extra space
-          // markers: true, // Useful for debugging
-        }
+      ScrollTrigger.create({
+        trigger: slideContentRef.current,
+        start: "top top",
+        end: "bottom bottom",
+        pin: leftSecRef.current,
+        pinSpacing: true,
+        anticipatePin: 1
       });
 
-      // Cleanup function to kill ScrollTrigger when component unmounts
       return () => {
         ScrollTrigger.getAll().forEach(t => t.kill());
       };
