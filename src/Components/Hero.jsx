@@ -77,7 +77,7 @@ function Hero() {
 
 
 
-      <div className="hero bg-[white] h-[106vh] w-full   text-center  overflow-x-hidden  lg:pt-0 lg:px-32 md: lg:mt-8">
+      <div className="hero bg-[white] min-h-[106vh] w-full   text-center  overflow-hidden  lg:pt-0 lg:px-32 md: lg:mt-8">
         <div className="main-bg  min-h-[40vh] mt-42  w-full relative  ">
       
 
@@ -122,7 +122,7 @@ function Hero() {
 
         </div>
 
-         <div className="sub-com  px-4  flex flex-col  relative items-center  w-full mt-6  overflow-hidden lg:flex-row sm:mt-8 lg:justify-between lg:mt-28">
+         <div className="sub-com  px-4  flex flex-col  relative items-center  w-full my-6  overflow-hidden lg:flex-row sm:mt-8 lg:justify-between lg:mt-28">
             <div className="sub-info opacity-0 text-zinc-700  font-[Quicksand] px-12 leading-none  font-medium text-[3.8vw] sm:text-[3vw] md:txt-[1.8vw] lg:text-[1.2vw] lg:w-[40%]">
                 <p>Daring companies come to us to craft ideas,
 products and experiences that redefine industries
@@ -131,7 +131,7 @@ and defy possibilities.</p>
             <div className="hero-btn opacity-0 bg-black border-[1px] mt-8 border-black px-2 py-2 rounded-lg flex items-center overflow-hidden font-[Quicksand] transition-all ease-out  duration-300  group hover:bg-blue-600 hover:scale-95 lg:mt-0 lg:">
                 <div className="flex flex-col  group">
                 <input type="button" className="pr-3 font-bold text-[3.3vw] transition-all ease-in duration-200 relative text-white tracking-tighter bottom-0 group-hover:bottom-20 md:text-[2.5vw] lg:text-[1.3vw]" value="START A CONVERSATION" />
-                <input type="button" className="pr-3 font-bold text-[3.3vw] absolute transition-all ease-in duration-200 text-white tracking-tighter top-[100%] opacity-0 group-hover:opacity-100 group-hover:top-4" value="START A CONVERSATION" />
+                <input type="button" className="pr-3 font-bold text-[3.3vw] absolute transition-all ease-in duration-200 text-white tracking-tighter top-[100%] opacity-0 group-hover:opacity-100 group-hover:top-4 md:text-[2.5vw] lg:text-[1.3vw]" value="START A CONVERSATION" />
 
                 </div>
                 <GoArrowRight style={{fontSize:"29px", fontWeight:"bolder", color:"white"}}/>

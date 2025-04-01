@@ -36,7 +36,7 @@ function Footer() {
 
   return (
     <div>
-      <div className="bg-[#dddddd] min-h-[100vh] z-40 w-full relative mt-8 pt-4 overflow-x-hidden lg:px-8 ">
+      <div className="bg-[#dddddd] min-h-[100vh] z-40 w-full relative mt-8 pt-4 overflow-hidden lg:px-8 ">
         <div className="footer-content px-2">
           <div className="footer-top   w-full flex flex-col  justify-between items-start lg:flex-row">
             <div className="title  w-full  ">
@@ -65,7 +65,7 @@ function Footer() {
                     />
                     <input
                       type="button"
-                      className="pr-3 font-bold text-[4vw] absolute transition-all ease-in duration-200 text-white tracking-tighter opacity-0 group-hover:opacity-100 top-[93%] group-hover:top-4 sm:text-[2vw]"
+                      className="pr-3 font-bold text-[4vw] absolute transition-all ease-in duration-200 text-white tracking-tighter opacity-0 group-hover:opacity-100 top-[93%] group-hover:top-4 sm:text-[2vw]  md:text-[2.5vw] lg:text-[1.3vw]"
                       value="START A CONVERSATION"
                     />
                   </div>

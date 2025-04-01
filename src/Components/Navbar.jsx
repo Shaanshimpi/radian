@@ -30,7 +30,7 @@ function Navbar() {
 
   return (
     <div className="navbar opacity-0  w-full  bg-white text-black fixed top-0 shadow z-[1] shadow-zinc-200 ">
-      <nav className=" w-full px-3 h-[100px]   bg-zinc-50">
+      <nav className=" w-full px-3 h-[100px] bg-zinc-50">
         <div className="navbar-content flex justify-between items-center  py-6">
           <div className="logo  rounded-full   leading-none inline-block  ">
             

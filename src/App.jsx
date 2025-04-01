@@ -35,29 +35,29 @@ useEffect(()=>{
 },[])
 
   return (
-    <div className='bg-[#f8f9fa] -z-10 relative'>
+    <div className='bg-[#f8f9fa] relative'>
       {
         !isLoaded ?
         <Loader/>
        :
       <>
-        <Navbar/> 
+          <Navbar/> 
           
           <Hero/>
           <Vision/>
           <Slide/>
           
-          <ScrollTriggerDirectionalMovement/>
        
+          <ScrollTriggerDirectionalMovement/>
           <Card/>
           <Footer/>  
           {/* <Demo/> */}
       </>
     }
-       <div className="main-content">
+       {/* <div className="main-content">
           
 
-      </div>
+      </div> */}
      </div>
   )
 }

@@ -5,6 +5,23 @@ import { GoArrowRight } from "react-icons/go";
 // gsap.registerPlugin(ScrollTrigger)
 
 function Card() {
+  const cards = [{
+    image: "https://cdn.prod.website-files.com/65c0c17643da67dca6ad732c/670fddc84610217f70b0b1bb_autograph-cover.png",
+    title: "Book Store",
+    description: "Discover our wide selection of books, including classic novels, biographies, and more.",
+  },
+  {
+    image: "https://cdn.prod.website-files.com/65c0c17643da67dca6ad732c/673216ce8e2a141a3895f7c1_kele-cover.webp",
+    title: "KELE",
+    description: "A Simple Approach To Financial Accessibility",
+  },
+  {
+    image: "https://cdn.prod.website-files.com/65c0c17643da67dca6ad732c/66aa235dc0d81f08040cda27_propel-cover.webp",
+    title: "Propel",
+    description: "A Simple Approach To Financial Accessibility",
+  },
+  
+]
   useEffect(() => {
     let t5 = gsap.timeline({
       scrollTrigger: {
@@ -154,7 +171,7 @@ function Card() {
                   />
                   <input
                     type="button"
-                    className="pr-3 font-bold text-[20px] absolute transition-all ease-in duration-200 text-white tracking-tighter top-[120%] group-hover:top-4"
+                    className="pr-3 font-bold text-[20px] absolute transition-all ease-in duration-200 text-white tracking-tighter top-[120%] group-hover:top-4  md:text-[2.5vw] lg:text-[1.3vw]"
                     value="START A CONVERSATION"
                   />
                 </div>
@@ -171,10 +188,10 @@ function Card() {
         </div>
 
         <div className="cards mt-8 lg:px-8 xl:px-28">
-          <div className="card1 w-full min-h-[30vh]   mt-14">
-            <div className="card-img w-full h-[25vh] hover:opacity-0  bg-yellow-200 rounded-lg relative overflow-hidden  sm:h-[35vh] md:h-[40vh] lg:h-[70vh] xl:h-[80vh]">
+          {/* <div className="card1 w-full min-h-[30vh]   mt-14">
+            <div className="card-img w-full h-[25vh]   bg-yellow-200 rounded-lg relative overflow-hidden  sm:h-[35vh] md:h-[40vh] lg:h-[70vh] xl:h-[80vh]">
               <img
-                className="object-cover transition-all ease-in duration-300  object-center w-full h-full hover:opacity-0"
+                className="object-cover transition-all ease-in duration-300  object-center w-full h-full "
                 src="https://cdn.prod.website-files.com/65c0c17643da67dca6ad732c/670fddc84610217f70b0b1bb_autograph-cover.png"
                 alt=""
               />
@@ -185,7 +202,7 @@ function Card() {
               </div>
             </div>
 
-            <div className="card1-info   overflow-hidden py-3 flex flex-col justify-between items-start px-2 lg:flex-row lg:items-center lg:gap-7">
+            <div className="card1-info  overflow-hidden py-3 flex flex-col justify-between items-start px-2 lg:flex-row lg:items-center lg:gap-7">
               <div className="left my-2">
                 <div className="head ">
                   <h1 className="uppercase font-[Bebas_Neue] leading-none pt-2 text-[6vw] text-[#000]  font-bold lg:text-[50px]">
@@ -289,67 +306,76 @@ function Card() {
                 </div>
               </div>
             </div>
-          </div>
+          </div> */}
 
-          <div className="card3 w-full min-h-[30vh]  mt-14">
-            <div className="card-img w-full h-[25vh] bg-yellow-200 rounded-lg relative overflow-hidden group sm:h-[35vh] md:h-[40vh] lg:h-[70vh] xl:h-[80vh]">
-              <img
-                className="object-cover transition-all ease-in duration-300  object-center w-full h-full group-hover:scale-105"
-                src="https://cdn.prod.website-files.com/65c0c17643da67dca6ad732c/66aa235dc0d81f08040cda27_propel-cover.webp"
-                alt=""
-              />
-              <div className="overlay transition-all ease-in duration-300 flex justify-center items-center  bg-gradient-to-b from-transparent  via-black/70  to-black h-full w-full absolute top-[100%] group-hover:top-0">
-                <h1 className="uppercase transition-all ease-in duration-300  font-[Bebas_Neue] text-[7vw] text-[#CCCCCC] opacity-0  font-bold absolute bottom-[100%]   group-hover:opacity-100 group-hover:bottom-[35%]">
-                  EXPLORE
-                </h1>
-              </div>
-            </div>
+          {
+            
+            cards.map((ele, index) => {
+              return (
+              <div className="card3 w-full min-h-[30vh]  mt-14">
+                <div className="card-img w-full h-[25vh] bg-yellow-200 rounded-lg relative overflow-hidden group sm:h-[35vh] md:h-[40vh] lg:h-[70vh] xl:h-[80vh]">
+                  <img
+                    className="object-cover transition-all ease-in duration-300  object-center w-full h-full group-hover:scale-105"
+                    src={ele.image}
+                    alt=""
+                  />
+                  <div className="overlay transition-all ease-in duration-300 flex justify-center items-center  bg-gradient-to-b from-transparent  via-black/70  to-black h-full w-full absolute top-[100%] group-hover:top-0">
+                    <h1 className="uppercase transition-all ease-in duration-300  font-[Bebas_Neue] text-[7vw] text-[#CCCCCC] opacity-0  font-bold absolute bottom-[100%]   group-hover:opacity-100 group-hover:bottom-[35%]">
+                      {ele.title}
+                    </h1>
+                  </div>
+                </div>
 
-            <div className="card1-info   overflow-hidden py-3 flex flex-col justify-between items-start px-2 lg:flex-row lg:items-center lg:gap-7">
-              <div className="left my-2">
-                <div className="head ">
-                  <h1 className="uppercase font-[Bebas_Neue] leading-none pt-2 text-[6vw] text-[#000]  font-bold lg:text-[50px]">
-                    KELE
-                  </h1>
+                <div className="card1-info   overflow-hidden py-3 flex flex-col justify-between items-start px-2 lg:flex-row lg:items-center lg:gap-7">
+                  <div className="left my-2">
+                    <div className="head ">
+                      <h1 className="uppercase font-[Bebas_Neue] leading-none pt-2 text-[6vw] text-[#000]  font-bold lg:text-[50px]">
+                        {ele.title}
+                      </h1>
+                    </div>
+                    <div className="sub-head">
+                      <p className="font-[Quicksand] text-[3.5vw] pt-2 font-medium md:text-[17px] lg:text-[23px]">
+                        {ele.description}
+                      </p>
+                    </div>
+                  </div>
+                  <div className="right flex flex-wrap my-2 gap-2">
+                    <div>
+                      <input
+                        className="font-[Quicksand] text-[10px] py-1 px-2 rounded-[5px] font-medium bg-[#ACD6DD]   border-[#63c9db] border-[1px] lg:text-[15px] "
+                        type="button"
+                        value="VISUAL IDENTITY"
+                      />
+                    </div>
+                    <div>
+                      <input
+                        className="font-[Quicksand] text-[10px] py-1 px-2 rounded-[5px] font-medium bg-[#ACD6DD]  border-[#63c9db] border-[1px] lg:text-[15px] "
+                        type="button"
+                        value="APP DESIGN"
+                      />
+                    </div>
+                    <div>
+                      <input
+                        className="font-[Quicksand] text-[10px] py-1 px-2 rounded-[5px] font-medium bg-[#ACD6DD]  border-[#63c9db] border-[1px] lg:text-[15px] "
+                        type="button"
+                        value="APP DEVELOPMENT"
+                      />
+                    </div>
+                    <div>
+                      <input
+                        className="font-[Quicksand] text-[10px] py-1 px-2 rounded-[5px] font-medium bg-[#ACD6DD] border-[#63c9db] border-[1px] lg:text-[15px] "
+                        type="button"
+                        value="DIGITAL TRANSFORMATION"
+                      />
+                    </div>
+                  </div>
                 </div>
-                <div className="sub-head">
-                  <p className="font-[Quicksand] text-[3.5vw] pt-2 font-medium md:text-[17px] lg:text-[23px]">
-                    A Simple Approach To Financial Accessibility
-                  </p>
-                </div>
+                
               </div>
-              <div className="right flex flex-wrap my-2 gap-2">
-                <div>
-                  <input
-                    className="font-[Quicksand] text-[10px] py-1 px-2 rounded-[5px] font-medium bg-[#ACD6DD]   border-[#63c9db] border-[1px] lg:text-[15px] "
-                    type="button"
-                    value="VISUAL IDENTITY"
-                  />
-                </div>
-                <div>
-                  <input
-                    className="font-[Quicksand] text-[10px] py-1 px-2 rounded-[5px] font-medium bg-[#ACD6DD]  border-[#63c9db] border-[1px] lg:text-[15px] "
-                    type="button"
-                    value="APP DESIGN"
-                  />
-                </div>
-                <div>
-                  <input
-                    className="font-[Quicksand] text-[10px] py-1 px-2 rounded-[5px] font-medium bg-[#ACD6DD]  border-[#63c9db] border-[1px] lg:text-[15px] "
-                    type="button"
-                    value="APP DEVELOPMENT"
-                  />
-                </div>
-                <div>
-                  <input
-                    className="font-[Quicksand] text-[10px] py-1 px-2 rounded-[5px] font-medium bg-[#ACD6DD] border-[#63c9db] border-[1px] lg:text-[15px] "
-                    type="button"
-                    value="DIGITAL TRANSFORMATION"
-                  />
-                </div>
-              </div>
-            </div>
-          </div>
+          )
+            })
+              
+          }
         </div>
       </div>
     </div>
