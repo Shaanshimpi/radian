@@ -5,77 +5,73 @@ import { useGSAP } from "@gsap/react";
 
 function Vision() {
   gsap.registerPlugin(ScrollTrigger);
-  useGSAP(() => {
-    let t2 = gsap.timeline({
-      scrollTrigger: {
-        trigger: ".vision ",
-        start: "top 70%", // when the top of the trigger hits the top of the viewport
-        end: "+=500", // end after scrolling 500px beyond the start
-        markers: "true",
-      },
+  useEffect(() => {
+    const ctx = gsap.context(() => {
+      let t2 = gsap.timeline({
+        scrollTrigger: {
+          trigger: ".vision",
+          start: "top 70%",
+          end: "+=500",
+          toggleActions: "play none none reverse"
+        },
+      });
+
+      t2.fromTo(
+        ".vision-text, .vision-text2, .vision-text3",
+        {
+          y: 300,
+          opacity: 0,
+        },
+        {
+          y: 0,
+          opacity: 1,
+          duration: 1,
+          stagger: 0.2,
+          ease: "circ",
+        }
+      )
+      .fromTo(
+        "#visionimg1,#visionimg3",
+        {
+          y: -200,
+          opacity: 0,
+        },
+        {
+          y: 0,
+          opacity: 1,
+          duration: 0.7,
+          ease: "circ",
+        },
+        "<"
+      )
+      .fromTo(
+        "#visionimg2,#visionimg4",
+        {
+          y: 200,
+          opacity: 0,
+        },
+        {
+          y: 0,
+          opacity: 1,
+          duration: 0.7,
+          ease: "circ",
+        },
+        "<"
+      )
+      .fromTo(
+        "#slant1,#slant2,#slant3",
+        {
+          opacity: 0,
+        },
+        {
+          opacity: 1,
+          duration: 2,
+        },
+        "<"
+      );
     });
-
-    t2.fromTo(
-      ".vision-text, .vision-text2, .vision-text3",
-      {
-        y: 300,
-        opacity: 0,
-      },
-      {
-        y: 0,
-        opacity: 1,
-        duration: 1,
-        stagger: 0.2,
-        ease: "circ",
-      },
-    );
-
-    t2.fromTo(
-      "#visionimg1,#visionimg3",
-      {
-        y: -200,
-        opacity: 0,
-      },
-      {
-        y: 0,
-        opacity: 1,
-        duration: 0.7,
-        ease: "circ",
-
-        // stagger:0.2,
-      },
-      "a",
-    );
-
-    t2.fromTo(
-      "#visionimg2,#visionimg4",
-      {
-        y: 200,
-        opacity: 0,
-      },
-      {
-        y: 0,
-        opacity: 1,
-        duration: 0.7,
-        ease: "circ",
-
-        // stagger:0.2,
-      },
-      "a",
-    );
-
-    t2.fromTo(
-      "#slant1,#slant2, #slant3",
-      {
-        opacity: 0,
-      },
-      {
-        opacity: 1,
-        duration: 2,
-        // stagger:0.2,
-      },
-      "a",
-    );
+    
+    return () => ctx.revert();
   }, []);
   return (
     <>
