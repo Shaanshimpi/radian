@@ -14,11 +14,12 @@ function Slide() {
 
       ScrollTrigger.create({
         trigger: slideContentRef.current,
-        start: "top top",
-        end: "bottom center",
+        start: "0% top",
+        end: "100% center",
         pin: leftSecRef.current,
-        pinSpacing: true,
-        anticipatePin: 1,
+        // pinSpacing: true,
+        // anticipatePin: 1,
+        markers: true,
       });
 
       return () => {

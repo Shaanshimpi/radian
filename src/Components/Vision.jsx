@@ -13,7 +13,7 @@ function Vision() {
           start: "top 70%",
           end: "+=500",
           toggleActions: "play none none reverse",
-          markers: true,
+          // markers: true,
         },
       });
 

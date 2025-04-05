@@ -1,8 +1,7 @@
 import gsap from "gsap";
-// import _ScrollTrigger from "gsap/ScrollTrigger";
+import ScrollTrigger from "gsap/ScrollTrigger";
 import React, { useEffect } from "react";
 import { GoArrowRight } from "react-icons/go";
-// gsap.registerPlugin(ScrollTrigger)
 
 function Card() {
   const cards = [{
@@ -22,46 +21,38 @@ function Card() {
   },
   
 ]
-  useEffect(() => {
-    let t5 = gsap.timeline({
+useEffect(() => {
+  gsap.registerPlugin(ScrollTrigger);
+
+  // Animate header section
+  gsap.fromTo(
+    ".title h1, .sub-head, .button",
+    {
+      y: 600,
+      scale: 0.6,
+      opacity: 0,
+      rotateX: `-30deg`,
+    },
+    {
+      y: 0,
+      scale: 1,
+      opacity: 1,
+      ease: "easeOutCirc",
+      duration: 0.6,
+      rotateX: `0deg`,
+      stagger: 0.1,
       scrollTrigger: {
-        trigger: ".title ",
-        start: "top 80%", // when the top of the trigger hits the top of the viewport
-        end: "+=500", // end after scrolling 500px beyond the start
-        //  markers:"true",
+        trigger: ".title",
+        start: "top 80%",
+        end: "+=500",
       },
-    });
+    }
+  );
 
-    t5.fromTo(
-      ".title h1, .sub-head, .button ",
-      {
-        y: 600,
-        scale: 0.6,
-        opacity: 0,
-        rotateX: `-30deg`,
-      },
-      {
-        y: 0,
-        scale: 1,
-        opacity: 1,
-        ease: "easeOutCirc",
-        duration: 1,
-        rotateX: `0deg`,
-        stagger: 0.1,
-      }
-    );
-
-    let tl = gsap.timeline({
-      scrollTrigger: {
-        trigger: ".card1",
-        start: "top 100%", // when the top of the trigger hits the top of the viewport
-        end: "+=500", // end after scrolling 500px beyond the start
-        //  markers:"true",
-      },
-    });
-
-    tl.fromTo(
-      ".card1",
+  // Animate each card dynamically
+  cards.forEach((_, index) => {
+    gsap.fromTo(
+      `.card-${index}`,
       {
         y: 200,
         scale: 0.6,
@@ -72,70 +63,20 @@ function Card() {
         y: 0,
         scale: 1,
         opacity: 1,
+        rotateX: `0deg`,
         ease: "easeOutCirc",
         duration: 0.5,
-        rotateX: `0deg`,
-      }
-    );
-
-    let t2 = gsap.timeline({
-      // yes, we can add it to an entire timeline!
-      scrollTrigger: {
-        trigger: ".card2",
-        // pin: true, // pin the trigger element while active
-        start: "top 100%", // when the top of the trigger hits the top of the viewport
-        end: "+=500", // end after scrolling 500px beyond the start
-        //  markers:"true",
-      },
-    });
-
-    t2.fromTo(
-      ".card2",
-      {
-        y: 200,
-        scale: 0.3,
-        opacity: 0,
-        rotateX: `-30deg`,
-      },
-      {
-        y: 0,
-        scale: 1,
-        opacity: 1,
-        ease: "easeOutCirc",
-        duration: 0.5,
-        rotateX: `0deg`,
-      }
-    );
-
-    let t3 = gsap.timeline({
-      // yes, we can add it to an entire timeline!
-      scrollTrigger: {
-        trigger: ".card3",
-        // pin: true, // pin the trigger element while active
-        start: "top 100%", // when the top of the trigger hits the top of the viewport
-        end: "+=500", // end after scrolling 500px beyond the start
-        //  markers:"true",
-      },
-    });
-
-    t3.fromTo(
-      ".card3",
-      {
-        y: 200,
-        scale: 0.6,
-        opacity: 0,
-        rotateX: `-30deg`,
-      },
-      {
-        y: 0,
-        scale: 1,
-        opacity: 1,
-        ease: "easeOutCirc",
-        duration: 0.5,
-        rotateX: `0deg`,
+        scrollTrigger: {
+          trigger: `.card-${index}`,
+          start: "top 100%",
+          end: "+=400",
+          // markers: true,
+        },
       }
     );
   });
+}, []);
+
 
   return (
     <div>
@@ -312,7 +253,7 @@ function Card() {
             
             cards.map((ele, index) => {
               return (
-              <div className="card3 w-full min-h-[30vh]  mt-14">
+              <div className={`card card-${index} w-full min-h-[30vh]  mt-14`}>
                 <div className="card-img w-full h-[25vh] bg-yellow-200 rounded-lg relative overflow-hidden group sm:h-[35vh] md:h-[40vh] lg:h-[70vh] xl:h-[80vh]">
                   <img
                     className="object-cover transition-all ease-in duration-300  object-center w-full h-full group-hover:scale-105"

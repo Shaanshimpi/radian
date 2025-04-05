@@ -77,8 +77,8 @@ function Hero() {
 
 
 
-      <div className="hero bg-[white] min-h-[106vh] w-full   text-center  overflow-hidden  lg:pt-0 lg:px-32 md: lg:mt-8">
-        <div className="main-bg  min-h-[40vh] mt-42  w-full relative  ">
+      <div className="hero bg-[white] min-h-[100vh] w-full   text-center  overflow-hidden  lg:pt-0 lg:px-32 md: lg:mt-8 md:py-30">
+        <div className="main-bg  min-h-[40vh]  w-full relative md:mt-10 ">
       
 
         <div className='video-container   bg-white justify-center  px-2 relative  mt-6 w-[100%] hidden  lg:block  h-[500px] '>
@@ -122,7 +122,7 @@ function Hero() {
 
         </div>
 
-         <div className="sub-com  px-4  flex flex-col  relative items-center  w-full my-6  overflow-hidden lg:flex-row sm:mt-8 lg:justify-between lg:mt-28">
+         <div className="sub-com  px-4  flex flex-col  relative items-center  w-full  overflow-hidden lg:flex-row sm:mt-8 lg:justify-between lg:mt-20">
             <div className="sub-info opacity-0 text-zinc-700  font-[Quicksand] px-12 leading-none  font-medium text-[3.8vw] sm:text-[3vw] md:txt-[1.8vw] lg:text-[1.2vw] lg:w-[40%]">
                 <p>Daring companies come to us to craft ideas,
 products and experiences that redefine industries

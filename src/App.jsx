@@ -37,11 +37,11 @@ useEffect(()=>{
   return (
     <div className='bg-[#f8f9fa] relative'>
       {
-        !isLoaded ?
-        <Loader/>
-       :
+      //   !isLoaded ?
+      //   <Loader/>
+      //  :
       <>
-          <Navbar/> 
+          {/* <Navbar/>  */}
           
           <Hero/>
           <Vision/>
