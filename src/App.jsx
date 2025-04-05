@@ -41,7 +41,7 @@ useEffect(()=>{
       //   <Loader/>
       //  :
       <>
-          {/* <Navbar/>  */}
+          <Navbar/> 
           
           <Hero/>
           <Vision/>

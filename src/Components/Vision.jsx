@@ -6,74 +6,77 @@ import { useGSAP } from "@gsap/react";
 function Vision() {
   gsap.registerPlugin(ScrollTrigger);
   useEffect(() => {
-    const ctx = gsap.context(() => {
-      let t2 = gsap.timeline({
-        scrollTrigger: {
-          trigger: ".vision",
-          start: "top 70%",
-          end: "+=500",
-          toggleActions: "play none none reverse",
-          // markers: true,
-        },
-      });
-
-      t2.fromTo(
-        ".vision-text, .vision-text2, .vision-text3",
+    gsap.registerPlugin(ScrollTrigger);
+  
+    let t2 = gsap.timeline({
+      scrollTrigger: {
+        trigger: ".vision",
+        start: "top 70%",
+        end: "bottom center",
+        toggleActions: "play none none reverse",
+        // markers: true,
+      },
+    });
+  
+    t2.fromTo(
+      ".vision-text, .vision-text2, .vision-text3",
+      {
+        y: 300,
+        opacity: 0,
+      },
+      {
+        y: 0,
+        opacity: 1,
+        duration: 1,
+        stagger: 0.2,
+        ease: "circ",
+      }
+    )
+      .fromTo(
+        "#visionimg1,#visionimg3",
         {
-          y: 300,
+          y: -200,
           opacity: 0,
         },
         {
           y: 0,
           opacity: 1,
-          duration: 1,
-          stagger: 0.2,
+          duration: 0.7,
           ease: "circ",
         },
+        "<"
       )
-        .fromTo(
-          "#visionimg1,#visionimg3",
-          {
-            y: -200,
-            opacity: 0,
-          },
-          {
-            y: 0,
-            opacity: 1,
-            duration: 0.7,
-            ease: "circ",
-          },
-          "<",
-        )
-        .fromTo(
-          "#visionimg2,#visionimg4",
-          {
-            y: 200,
-            opacity: 0,
-          },
-          {
-            y: 0,
-            opacity: 1,
-            duration: 0.7,
-            ease: "circ",
-          },
-          "<",
-        )
-        .fromTo(
-          "#slant1,#slant2,#slant3",
-          {
-            opacity: 0,
-          },
-          {
-            opacity: 1,
-            duration: 2,
-          },
-          "<",
-        );
-    });
-
-    return () => ctx.revert();
+      .fromTo(
+        "#visionimg2,#visionimg4",
+        {
+          y: 200,
+          opacity: 0,
+        },
+        {
+          y: 0,
+          opacity: 1,
+          duration: 0.7,
+          ease: "circ",
+        },
+        "<"
+      )
+      .fromTo(
+        "#slant1,#slant2,#slant3",
+        {
+          opacity: 0,
+        },
+        {
+          opacity: 1,
+          duration: 2,
+        },
+        "<"
+      );
+  
+    return () => {
+      ScrollTrigger.getAll().forEach(trigger => trigger.kill());
+    };
   }, []);
+  
   return (
     <>
       <div className="vision  min-h-[40vh]  lg:mt-16 z-[999]">

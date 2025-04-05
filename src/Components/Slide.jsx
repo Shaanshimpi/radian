@@ -19,7 +19,7 @@ function Slide() {
         pin: leftSecRef.current,
         // pinSpacing: true,
         // anticipatePin: 1,
-        markers: true,
+        // markers: true,
       });
 
       return () => {
