@@ -14,7 +14,7 @@ function Vision() {
         start: "top 70%",
         end: "bottom center",
         toggleActions: "play none none reverse",
-        // markers: true,
+        markers: true,
       },
     });
   
