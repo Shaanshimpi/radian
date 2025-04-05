@@ -30,7 +30,7 @@ function Footer() {
         stagger: 0.1,
         duration: 0.9,
         delay: 0.1,
-      }
+      },
     );
   }, []);
 
@@ -53,9 +53,8 @@ function Footer() {
                   this rapidly changing world.
                 </p>
               </div>
-             
-           
-            <div className="text-white my-2 mt-4 lg:mt-6">
+
+              <div className="text-white my-2 mt-4 lg:mt-6">
                 <div className="button bg-black border-[1px] border-black px-4 py-4 rounded-lg flex items-center overflow-hidden font-[Quicksand] transition-all ease-out  duration-300  group hover:bg-blue-600 ">
                   <div className="flex flex-col  group">
                     <input
@@ -78,54 +77,75 @@ function Footer() {
                   />
                 </div>
               </div>
-          </div>
+            </div>
           </div>
 
           <div className="footer-center   w-full flex font-[Bebas_Neue] flex-wrap  my-4    gap-2">
             <div className="flex items-center text-lg  font-medium cursor-pointer transition-all ease-in duration-100 border-zinc-300 border-0 px-2 py-1 rounded-xl hover:border-[1px] hover:scale-105 hover:shadow-zinc-300  sm:text-[1rem] lg:text-[1.5rem] lg:mt-6">
-              <a href="" className="cursor-pointer"> Email </a>
+              <a href="" className="cursor-pointer">
+                {" "}
+                Email{" "}
+              </a>
               <GoArrowUpRight
                 style={{ fontSize: "25px", fontWeight: "bold" }}
               />
             </div>
 
             <div className="flex items-center text-lg  font-medium cursor-pointer transition-all ease-in duration-100 border-zinc-300 border-0 px-2 py-1 rounded-xl hover:border-[1px] hover:scale-105 hover:shadow-zinc-300  sm:text-[1rem] lg:text-[1.5rem] lg:mt-6">
-              <a href="" className="cursor-pointer"> Instagram </a>
+              <a href="" className="cursor-pointer">
+                {" "}
+                Instagram{" "}
+              </a>
               <GoArrowUpRight
                 style={{ fontSize: "25px", fontWeight: "bold" }}
               />
             </div>
 
             <div className="flex items-center text-lg  font-medium cursor-pointer transition-all ease-in duration-100 border-zinc-300 border-0 px-2 py-1 rounded-xl hover:border-[1px] hover:scale-105 hover:shadow-zinc-300  sm:text-[1rem] lg:text-[1.5rem] lg:mt-6">
-              <a href="" className="cursor-pointer"> Twitter (X) </a>
+              <a href="" className="cursor-pointer">
+                {" "}
+                Twitter (X){" "}
+              </a>
               <GoArrowUpRight
                 style={{ fontSize: "25px", fontWeight: "bold" }}
               />
             </div>
 
             <div className="flex items-center text-lg  font-medium cursor-pointer transition-all ease-in duration-100 border-zinc-300 border-0 px-2 py-1 rounded-xl hover:border-[1px] hover:scale-105 hover:shadow-zinc-300  sm:text-[1rem] lg:text-[1.5rem] lg:mt-6">
-              <a href="" className="cursor-pointer"> LinkedIn </a>
+              <a href="" className="cursor-pointer">
+                {" "}
+                LinkedIn{" "}
+              </a>
               <GoArrowUpRight
                 style={{ fontSize: "25px", fontWeight: "bold" }}
               />
             </div>
 
             <div className="flex items-center text-lg  font-medium cursor-pointer transition-all ease-in duration-100 border-zinc-300 border-0 px-2 py-1 rounded-xl hover:border-[1px] hover:scale-105 hover:shadow-zinc-300  sm:text-[1rem] lg:text-[1.5rem] lg:mt-6">
-              <a href="" className="cursor-pointer"> Facebook </a>
+              <a href="" className="cursor-pointer">
+                {" "}
+                Facebook{" "}
+              </a>
               <GoArrowUpRight
                 style={{ fontSize: "25px", fontWeight: "bold" }}
               />
             </div>
 
             <div className="flex items-center text-lg  font-medium cursor-pointer transition-all ease-in duration-100 border-zinc-300 border-0 px-2 py-1 rounded-xl hover:border-[1px] hover:scale-105 hover:shadow-zinc-300  sm:text-[1rem] lg:text-[1.5rem] lg:mt-6">
-              <a href="" className="cursor-pointer"> Medium </a>
+              <a href="" className="cursor-pointer">
+                {" "}
+                Medium{" "}
+              </a>
               <GoArrowUpRight
                 style={{ fontSize: "25px", fontWeight: "bold" }}
               />
             </div>
 
             <div className="flex items-center text-lg  font-medium cursor-pointer transition-all ease-in duration-100 border-zinc-300 border-0 px-2 py-1 rounded-xl hover:border-[1px] hover:scale-105 hover:shadow-zinc-300  sm:text-[1rem] lg:text-[1.5rem] lg:mt-6">
-              <a href="" className="cursor-pointer"> Spotify </a>
+              <a href="" className="cursor-pointer">
+                {" "}
+                Spotify{" "}
+              </a>
               <GoArrowUpRight
                 style={{ fontSize: "25px", fontWeight: "bold" }}
               />
@@ -153,13 +173,25 @@ function Footer() {
 
           <div className="policy bg-[#dddddd]  h-[10vh] w-full flex flex-col justify-between items-start pt-4 lg:flex-row lg:items-center lg:h-[5vh] ">
             <div>
-              <h1>© 2025 Check Design Company. All Rights Reserved.</h1>
+              <h1>© 2025 FireFist Solutions. All Rights Reserved.</h1>
             </div>
             <div className="cursor-pointer font-[Quicksand] font-semibold flex flex-col pt-6  gap-1 lg:flex-row lg:gap-8 lg:justify-center lg:pt-0">
-              <a href="" className="cursor-pointer"> Privacy Policy</a>
-              <a href="" className="cursor-pointer"> Terms and conditions</a>
-              <a href="" className="cursor-pointer"> Cookie Notice</a>
-              <a href="" className="cursor-pointer"> Bla Bla </a>
+              <a href="" className="cursor-pointer">
+                {" "}
+                Privacy Policy
+              </a>
+              <a href="" className="cursor-pointer">
+                {" "}
+                Terms and conditions
+              </a>
+              <a href="" className="cursor-pointer">
+                {" "}
+                Cookie Notice
+              </a>
+              <a href="" className="cursor-pointer">
+                {" "}
+                Bla Bla{" "}
+              </a>
             </div>
           </div>
         </div>

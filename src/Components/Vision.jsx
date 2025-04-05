@@ -12,7 +12,8 @@ function Vision() {
           trigger: ".vision",
           start: "top 70%",
           end: "+=500",
-          toggleActions: "play none none reverse"
+          toggleActions: "play none none reverse",
+          markers: true,
         },
       });
 
@@ -28,49 +29,49 @@ function Vision() {
           duration: 1,
           stagger: 0.2,
           ease: "circ",
-        }
+        },
       )
-      .fromTo(
-        "#visionimg1,#visionimg3",
-        {
-          y: -200,
-          opacity: 0,
-        },
-        {
-          y: 0,
-          opacity: 1,
-          duration: 0.7,
-          ease: "circ",
-        },
-        "<"
-      )
-      .fromTo(
-        "#visionimg2,#visionimg4",
-        {
-          y: 200,
-          opacity: 0,
-        },
-        {
-          y: 0,
-          opacity: 1,
-          duration: 0.7,
-          ease: "circ",
-        },
-        "<"
-      )
-      .fromTo(
-        "#slant1,#slant2,#slant3",
-        {
-          opacity: 0,
-        },
-        {
-          opacity: 1,
-          duration: 2,
-        },
-        "<"
-      );
+        .fromTo(
+          "#visionimg1,#visionimg3",
+          {
+            y: -200,
+            opacity: 0,
+          },
+          {
+            y: 0,
+            opacity: 1,
+            duration: 0.7,
+            ease: "circ",
+          },
+          "<",
+        )
+        .fromTo(
+          "#visionimg2,#visionimg4",
+          {
+            y: 200,
+            opacity: 0,
+          },
+          {
+            y: 0,
+            opacity: 1,
+            duration: 0.7,
+            ease: "circ",
+          },
+          "<",
+        )
+        .fromTo(
+          "#slant1,#slant2,#slant3",
+          {
+            opacity: 0,
+          },
+          {
+            opacity: 1,
+            duration: 2,
+          },
+          "<",
+        );
     });
-    
+
     return () => ctx.revert();
   }, []);
   return (
