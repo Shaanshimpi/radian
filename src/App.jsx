@@ -1,65 +1,16 @@
-import React, { useEffect, useState } from 'react'
-import Loader from './Components/Loader'
-import Navbar from './Components/Navbar'
-import Hero from './Components/Hero'
-import Vision from './Components/Vision'
-import Slide from './Components/Slide'      
-import Pin from './Components/Pin'
-import Card from './Components/Card'
-import Footer from './Components/Footer'
-import LocomotiveScroll from 'locomotive-scroll';
-import ScrollTriggerDirectionalMovement from './Components/ScrollTriggerDirectionalMovement'
-import Demo from './Components/Demo'
+import React from "react";
+import Wrapper from "./Components/Wrapper";
+import { BrowserRouter, Switch, Route } from "react-router-dom";
 
 function App() {
-
-const locomotiveScroll = new LocomotiveScroll();
-const [isLoaded, setIsLoaded] = useState(false);
-useEffect(()=>{
-  // document.style.overflow=`hidden`;
-
-  const mainContent = document.getElementsByClassName("main-content")[0];
-  setTimeout(()=>{
-    // document.style.overflow=`auto`;
-    // mainContent.style.display = `block`;
-    // gsap.fromTo(`.main-content`,{
-    //   display:`hidden`
-    // },{
-    //   display: `block`
-    // })
-
-    setIsLoaded(true);
-
-  },6100)
-
-},[])
-
   return (
-    <div className='bg-[#f8f9fa] relative'>
-      {
-        !isLoaded ?
-          <Loader/>
-        :
-        <>
-          <Navbar/> 
-          
-          <Hero/>
-          <Vision/>
-          <Slide/>
-          
-        
-          {/* <ScrollTriggerDirectionalMovement/> */}
-          <Card/>
-          <Footer/>  
-          {/* <Demo/> */}
-        </>
-      }
-       {/* <div className="main-content">
-          
-
-      </div> */}
-    </div>
-  )
+    <BrowserRouter>
+      <Switch>
+        <Route exact path="/" component={Wrapper} />
+        <Route path="/:brand" component={Wrapper} />
+      </Switch>
+    </BrowserRouter>
+  );
 }
 
-export default App
+export default App;

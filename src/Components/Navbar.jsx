@@ -8,14 +8,13 @@ const Toggle = () => {
   const togglebtn = document.querySelector('.toggle-btn')
   const drpMenu = document.querySelector('.dropdown-menu')
   togglebtn.name = togglebtn.name == "menu" ? "close" : "menu";
-  console.log('working')
   drpMenu.style.translateY = togglebtn.name == "menu" ? "-100%" : "0";
   drpMenu.style.top = togglebtn.name == "menu" ? "-100vh" : "100px";
 
 
 }
 
-function Navbar() {
+function Navbar({brand}) {
 
 
 
@@ -32,9 +31,10 @@ function Navbar() {
     <div className="navbar opacity-0  w-full  bg-white text-black fixed top-0 shadow z-[1] shadow-zinc-200 ">
       <nav className=" w-full px-3  bg-zinc-50">
         <div className="navbar-content flex justify-between items-center py-3">
-          <div className="logo  rounded-full   leading-none inline-block  ">
+          <div className="logo  rounded-full   leading-none flex items-center">
             
               <img className="object-cover h-[60px] w-[60px] object-center rounded-full" src="src\assets\logo.jpeg" alt="" />
+              <h2 className="text-xl md:text-5xl ml-5">{brand}</h2>
 
           </div>
           <div className="dropdown-menu  w-full text-center justify-center md:justify-end flex  absolute right-0 top-[-100vh] h-screen py-12 px-8 gap-20  text-md font-[Prosto_One] transition-all ease-[cubic-bezier(.16,1,.59,.96)] duration-700 md:top-0 md:h-0 ">

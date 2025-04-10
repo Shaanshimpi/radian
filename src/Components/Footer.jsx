@@ -6,19 +6,31 @@ import { GoArrowRight } from "react-icons/go";
 import { GoArrowUpRight } from "react-icons/go";
 gsap.registerPlugin(ScrollTrigger);
 
-function Footer() {
+function Footer({brand}) {
   useEffect(() => {
+    setTimeout(() =>{
+
+      const brandLength = brand?.length;
+      const brandFooterTitle = document.querySelector(".com-name");
+      const brandFooterLogo = document.querySelector(".footer-logo");
+      if(brandFooterTitle){
+        brandFooterTitle.style.fontSize = 150/brandLength + "vw";
+        brandFooterLogo.style.height = 150/brandLength + "vw";
+        brandFooterLogo.style.width = 150/brandLength + "vw";
+      }
+      
+    },1000)
     let tl = gsap.timeline({
       scrollTrigger: {
         trigger: ".footer-content",
-        start: "top 20%", // when the top of the trigger hits the top of the viewport
+        start: "top 80%", // when the top of the trigger hits the top of the viewport
         end: "bottom 10%",
         // markers:true,
       },
     });
 
     tl.fromTo(
-      ".logo, .com-name h1",
+      ".com-name h2",
       {
         y: -600,
         // opacity:0
@@ -36,7 +48,7 @@ function Footer() {
 
   return (
     <div>
-      <div className="bg-[#dddddd] min-h-[100vh] z-40 w-full relative mt-8 pt-4 overflow-hidden lg:px-8 ">
+      <div className="bg-[#dddddd] z-40 w-full relative mt-8 pt-4 overflow-hidden lg:px-8 ">
         <div className="footer-content px-2">
           <div className="footer-top   w-full flex flex-col  justify-between items-start lg:flex-row">
             <div className="title  w-full  ">
@@ -152,22 +164,17 @@ function Footer() {
             </div>
           </div>
 
-          <div className="footer-bottom  overflow-hidden my-8 pb-6  flex justify-between items-center border-t-[0.1px] border-b-[1px] border-zinc-400">
-            <div className="logo w-[25vw]  flex  items-center sm:w-[25vw] ">
+          <div className="footer-bottom  overflow-hidden my-8 pb-6  flex justify-center items-center border-t-[0.1px] border-b-[1px] border-zinc-400">
+            <div className="logo mr-4 flex items-center  ">
               <img
-                className="object-cover object-center h-full w-full border-[#EEEEEE] border-2 rounded-full"
+                className="footer-logo object-cover object-center h-full w-full border-[#EEEEEE] border-2 rounded-full"
                 src="src\assets\logo.jpeg"
                 alt=""
               />
             </div>
 
-            <div className="com-name flex justify-evenly  text-[27vw] pt-4 leading-none tracking-wider font-[Bebas_neue] font-bold sm:text-[25vw]">
-              <h1>R</h1>
-              <h1>A</h1>
-              <h1>D</h1>
-              <h1>I</h1>
-              <h1>A</h1>
-              <h1>N</h1>
+            <div className={`com-name flex justify-evenly text-[27vw] pt-4 leading-none tracking-wider font-[Bebas_neue] font-bold sm:text-[25vw]`}>
+              {brand.split('').map((el,i)=><h2 key={i} className="min-w-7 text-center">{el}</h2>)}
             </div>
           </div>
 

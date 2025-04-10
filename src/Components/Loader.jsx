@@ -1,7 +1,7 @@
 import gsap from "gsap";
 import React, { useEffect } from "react";
 
-function Loader() {
+function Loader({brand}) {
   useEffect(() => {
 
     const tl = gsap.timeline();
@@ -407,16 +407,11 @@ function Loader() {
         </div>
 
            <div className="loading  absolute left-1/2 top-1/2 translate-x-[-50%]  translate-y-[-50%] flex justify-center items-center overflow-hidden z-[2]">
-               <div className="loader-text text-white  font-[Homenaje] leading-none flex items-center justify-center text-center  h-[20vw] w-[50vw] lg:h-[10vw] lg:w-[25vw]  overflow-hidden font-bold  ">
-               <div className="loader-text2  absolute text-[11.5vw] lg:text-[6vw]  text-center tracking-tighter bg-black  h-[100%] w-[100%] py-4 flex items-center justify-center">REIMAGINE</div>
-
-                   <div  className="loader-text3  absolute text-[11.5vw] lg:text-[5.7vw]   text-center tracking-tighter bg-black  h-[100%] w-[100%]  flex items-center justify-center ">REINVENTING</div>
-                   <div  className="loader-text4  absolute text-[11.5vw] lg:text-[6vw]   text-center tracking-tighter bg-black h-[100%] w-[100%] flex items-center justify-center ">REDEFINING</div>
-                   <div  className="loader-text5  absolute text-[11.5vw] lg:text-[6vw]   text-center tracking-tighter bg-black h-[100%] w-[100%] flex items-center justify-center ">RADIAN</div>
-
-
-
-
+               <div className="loader-text text-white  font-[Homenaje] leading-none flex items-center justify-center text-center h-[20vw] min-w-[60vw] lg:h-[10vw] overflow-hidden font-bold ">
+                  <div className="loader-text2  absolute text-[11.5vw] lg:text-[6vw]  text-center tracking-tighter bg-black  h-[100%] w-[100%] py-4 flex items-center justify-center">REIMAGINE</div>
+                  <div  className="loader-text3  absolute text-[11.5vw] lg:text-[5.7vw]   text-center tracking-tighter bg-black  h-[100%] w-[100%]  flex items-center justify-center ">REINVENTING</div>
+                  <div  className="loader-text4  absolute text-[11.5vw] lg:text-[6vw]   text-center tracking-tighter bg-black h-[100%] w-[100%] flex items-center justify-center ">REDEFINING</div>
+                  <div  className="loader-text5  absolute text-[11.5vw] lg:text-[6vw]   text-center tracking-tighter bg-black h-[100%] w-[100%] flex items-center justify-center ">{brand.toUpperCase()}</div>
                </div> 
                
                

@@ -3,7 +3,7 @@ import ScrollTrigger from "gsap/ScrollTrigger";
 import React, { useEffect } from "react";
 import { GoArrowRight } from "react-icons/go";
 
-function Card() {
+function Card({brand}) {
   const cards = [{
     image: "https://cdn.prod.website-files.com/65c0c17643da67dca6ad732c/670fddc84610217f70b0b1bb_autograph-cover.png",
     title: "Book Store",
@@ -84,13 +84,13 @@ useEffect(() => {
         <div className="cards-headings px-8  w-full flex flex-col justify-between items-center xl:flex-row xl:justify-between xl:px-28">
           <div className="title overflow-hidden text-center   ">
             <div className="overflow-hidden  ">
-              <h1 className="  flex items-center justify-center p-0 uppercase font-[Bebas_Neue] leading-none text-[10vw] w-full text-[#000] whitespace-nowrap font-bold md:text-[100px]">
-                We do
+              <h1 className="  flex items-center justify-center p-0 uppercase font-[Bebas_Neue] leading-none text-[10vw] w-full text-[#000] whitespace-nowrap font-bold md:text-[80px]">
+              {brand} does
               </h1>
             </div>
             <div className="overflow-hidden">
               <h1 className="   uppercase font-[Bebas_Neue]  leading-none text-[10vw] w-full text-[#000] whitespace-nowrap font-bold md:text-[100px]">
-                great work
+                some great work
               </h1>
             </div>
           </div>
@@ -253,7 +253,7 @@ useEffect(() => {
             
             cards.map((ele, index) => {
               return (
-              <div className={`card card-${index} w-full min-h-[30vh]  mt-14`}>
+              <div className={`card card-${index} w-full min-h-[30vh]  mt-14`} key={index}>
                 <div className="card-img w-full h-[25vh] bg-yellow-200 rounded-lg relative overflow-hidden group sm:h-[35vh] md:h-[40vh] lg:h-[70vh] xl:h-[80vh]">
                   <img
                     className="object-cover transition-all ease-in duration-300  object-center w-full h-full group-hover:scale-105"

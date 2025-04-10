@@ -3,7 +3,7 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import React, { useEffect } from "react";
 import { useGSAP } from "@gsap/react";
 
-function Vision() {
+function Vision({brand}) {
   gsap.registerPlugin(ScrollTrigger);
   useEffect(() => {
     gsap.registerPlugin(ScrollTrigger);
@@ -89,15 +89,15 @@ function Vision() {
               Together, we transform
             </span>
           </div>
-          <div className="vision-title flex flex-col leading-none items-center text-[13vw] overflow-hidden md:text-[11vw] lg:text-[8vw] xl:text-[95px] ">
+          <div className="vision-title flex flex-col leading-none items-center text-center text-[13vw] overflow-hidden md:text-[11vw] lg:text-[8vw] xl:text-[95px] ">
             <div className=" overflow-hidden">
               <h1 className="vision-text2  uppercase  font-[Agdasima] font-bold">
-                Audacious visions
+                Audacious visions into reality
               </h1>
             </div>
             <div className=" overflow-hidden">
               <h1 className="vision-text3  uppercase  font-[Agdasima] font-bold ">
-                into reality
+                Your Brand & <span className="text-[#25542C]">{brand}</span>
               </h1>
             </div>
           </div>
