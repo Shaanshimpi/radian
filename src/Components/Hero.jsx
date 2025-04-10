@@ -78,7 +78,7 @@ function Hero() {
 
 
       <div className="hero bg-[white] min-h-[100vh] w-full   text-center  overflow-hidden  lg:pt-0 lg:px-32 md: lg:mt-8 md:py-30">
-        <div className="main-bg  min-h-[40vh]  w-full relative md:mt-10 ">
+        <div className="main-bg  min-h-[40vh]  w-full relative mt-25 md:mt-10 ">
       
 
         <div className='video-container   bg-white justify-center  px-2 relative  mt-6 w-[100%] hidden  lg:block  h-[500px] '>
@@ -91,9 +91,7 @@ function Hero() {
                     <div className='    flex items-center text-center'>
 
                       <h1 className='text-[110px] font-medium tracking-tighter leading-none lg:bg-white relative lg:text-[250px] lg:pr-4 '>RE
-                      <span className="span opacity-0 absolute bg-yellow-300 text-[10px] lg:text-[15px] -tracking-normal px-1 py-1  font-bold -left-3 top-[12px] -rotate-12 lg:top-[28px]">BRANDING</span>
-
-
+                        <span className="span opacity-0 absolute bg-yellow-300 text-[10px] lg:text-[15px] -tracking-normal px-1 py-1  font-bold -left-3 top-[12px] -rotate-12 lg:top-[28px]">BRANDING</span>
                       </h1>
 
                     </div>

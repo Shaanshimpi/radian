@@ -3,77 +3,80 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import React, { useEffect } from "react";
 import { useGSAP } from "@gsap/react";
 
-function Vision() {
+function Vision({brand}) {
   gsap.registerPlugin(ScrollTrigger);
   useEffect(() => {
-    const ctx = gsap.context(() => {
-      let t2 = gsap.timeline({
-        scrollTrigger: {
-          trigger: ".vision",
-          start: "top 70%",
-          end: "+=500",
-          toggleActions: "play none none reverse",
-          // markers: true,
-        },
-      });
-
-      t2.fromTo(
-        ".vision-text, .vision-text2, .vision-text3",
+    gsap.registerPlugin(ScrollTrigger);
+  
+    let t2 = gsap.timeline({
+      scrollTrigger: {
+        trigger: ".vision",
+        start: "top 70%",
+        end: "bottom center",
+        toggleActions: "play none none reverse",
+        // markers: true,
+      },
+    });
+  
+    t2.fromTo(
+      ".vision-text, .vision-text2, .vision-text3",
+      {
+        y: 300,
+        opacity: 0,
+      },
+      {
+        y: 0,
+        opacity: 1,
+        duration: 1,
+        stagger: 0.2,
+        ease: "circ",
+      }
+    )
+      .fromTo(
+        "#visionimg1,#visionimg3",
         {
-          y: 300,
+          y: -200,
           opacity: 0,
         },
         {
           y: 0,
           opacity: 1,
-          duration: 1,
-          stagger: 0.2,
+          duration: 0.7,
           ease: "circ",
         },
+        "<"
       )
-        .fromTo(
-          "#visionimg1,#visionimg3",
-          {
-            y: -200,
-            opacity: 0,
-          },
-          {
-            y: 0,
-            opacity: 1,
-            duration: 0.7,
-            ease: "circ",
-          },
-          "<",
-        )
-        .fromTo(
-          "#visionimg2,#visionimg4",
-          {
-            y: 200,
-            opacity: 0,
-          },
-          {
-            y: 0,
-            opacity: 1,
-            duration: 0.7,
-            ease: "circ",
-          },
-          "<",
-        )
-        .fromTo(
-          "#slant1,#slant2,#slant3",
-          {
-            opacity: 0,
-          },
-          {
-            opacity: 1,
-            duration: 2,
-          },
-          "<",
-        );
-    });
-
-    return () => ctx.revert();
+      .fromTo(
+        "#visionimg2,#visionimg4",
+        {
+          y: 200,
+          opacity: 0,
+        },
+        {
+          y: 0,
+          opacity: 1,
+          duration: 0.7,
+          ease: "circ",
+        },
+        "<"
+      )
+      .fromTo(
+        "#slant1,#slant2,#slant3",
+        {
+          opacity: 0,
+        },
+        {
+          opacity: 1,
+          duration: 2,
+        },
+        "<"
+      );
+  
+    return () => {
+      ScrollTrigger.getAll().forEach(trigger => trigger.kill());
+    };
   }, []);
+  
   return (
     <>
       <div className="vision  min-h-[40vh]  lg:mt-16 z-[999]">
@@ -86,15 +89,15 @@ function Vision() {
               Together, we transform
             </span>
           </div>
-          <div className="vision-title flex flex-col leading-none items-center text-[13vw] overflow-hidden md:text-[11vw] lg:text-[8vw] xl:text-[95px] ">
+          <div className="vision-title flex flex-col leading-none items-center text-center text-[13vw] overflow-hidden md:text-[11vw] lg:text-[8vw] xl:text-[95px] ">
             <div className=" overflow-hidden">
               <h1 className="vision-text2  uppercase  font-[Agdasima] font-bold">
-                Audacious visions
+                Audacious visions into reality
               </h1>
             </div>
             <div className=" overflow-hidden">
               <h1 className="vision-text3  uppercase  font-[Agdasima] font-bold ">
-                into reality
+                Your Brand & <span className="text-[#25542C]">{brand}</span>
               </h1>
             </div>
           </div>
